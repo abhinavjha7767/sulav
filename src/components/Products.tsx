@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PrecisionMeasuring from "../assets/Precision Measuring Tools.jpg";
-import CircularGallery from "./CircularGallery";
+import ChromaGrid from "./ChromaGrid";
+import GradientText from "./TextGradient";
 
 const categoriesData = [
   {
@@ -166,19 +167,29 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
         </p>
       </div>
 
-      {/* 2. Photo carousel with CircularGallery */}
-      <div className="w-full h-[400px] md:h-[500px] relative rounded-[14px] overflow-hidden bg-black border border-white/5 mb-6 group cursor-grab active:cursor-grabbing">
-        <CircularGallery
-          items={[...category.items, ...category.items, ...category.items].map((item: any) => ({
-            image: typeof item.image === 'string' ? item.image : item.image.src,
-            text: item.name
-          }))}
-          bend={1}
-          textColor="#ffffff"
-          borderRadius={0.05}
-          scrollSpeed={2}
-          scrollEase={0.05}
-          font="bold 24px var(--font-space-grotesk)"
+      {/* 2. Photo carousel with ChromaGrid */}
+      <div className="w-full h-[400px] md:h-[500px] relative rounded-[14px] overflow-hidden bg-black border border-white/5 mb-6 group !cursor-auto active:cursor-auto">
+        <ChromaGrid
+          items={[...category.items, ...category.items, ...category.items].map((item: any, idx: number) => {
+            const colors = [
+              { border: "#3B82F6", grad: "linear-gradient(145deg, #3B82F6, #000)" },
+              { border: "#10B981", grad: "linear-gradient(180deg, #10B981, #000)" },
+              { border: "#8B5CF6", grad: "linear-gradient(145deg, #8B5CF6, #000)" },
+              { border: "#06B6D4", grad: "linear-gradient(220deg, #06B6D4, #000)" },
+            ];
+            const c = colors[idx % colors.length];
+            return {
+              image: typeof item.image === 'string' ? item.image : item.image.src,
+              title: item.name,
+              subtitle: category.title,
+              borderColor: c.border,
+              gradient: c.grad,
+            };
+          })}
+          radius={300}
+          damping={0.45}
+          fadeOut={0.6}
+          ease="power3.out"
         />
         {/* Subtle overlay gradients for depth */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
@@ -250,7 +261,13 @@ export const Products = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-display font-bold mb-4 text-white"
           >
-            Our <span className="text-blue-500 uppercase">Divisions</span>
+            <GradientText
+              colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+              animationSpeed={8}
+              showBorder={false}
+            >
+              Our Divisions
+            </GradientText>
           </motion.h2>
         </div>
 

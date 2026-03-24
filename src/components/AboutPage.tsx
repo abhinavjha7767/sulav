@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 import Link from "next/link";
+import GradientText from './TextGradient';
 
 export const AboutPage = () => {
   return (
@@ -73,11 +74,13 @@ export const AboutPage = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.9] tracking-tighter"
             >
-              ENGINEERING <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                THE FUTURE
-              </span> <br />
-              OF INDUSTRY.
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                ENGINEERING THE FUTURE OF INDUSTRY.
+              </GradientText>
             </motion.h1>
 
             <motion.p
@@ -214,7 +217,13 @@ export const AboutPage = () => {
                     <Rocket className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white">
-                    Mission Statement
+                    <GradientText
+                      colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                      animationSpeed={8}
+                      showBorder={false}
+                    >
+                      Mission Statement
+                    </GradientText>
                   </h2>
                 </div>
                 <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center">
@@ -231,7 +240,13 @@ export const AboutPage = () => {
                     <Target className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white">
-                    Our Vision
+                    <GradientText
+                      colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                      animationSpeed={8}
+                      showBorder={false}
+                    >
+                      Our Vision
+                    </GradientText>
                   </h2>
                 </div>
                 <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center">
@@ -291,7 +306,13 @@ export const AboutPage = () => {
         <div className="w-full mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-              Core Values
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Core Values
+              </GradientText>
             </h2>
             <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full" />
           </div>
@@ -331,7 +352,13 @@ export const AboutPage = () => {
         <div className="w-full mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-              Our Journey
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Our Journey
+              </GradientText>
             </h2>
           </div>
 
@@ -372,7 +399,13 @@ export const AboutPage = () => {
         <div className="w-full mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-              Certifications & Standards
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Certifications & Standards
+              </GradientText>
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
               Our commitment to international quality and safety standards.
@@ -407,7 +440,13 @@ export const AboutPage = () => {
         <div className="w-full mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-              Our Expert Team
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Our Expert Team
+              </GradientText>
             </h2>
           </div>
 
@@ -441,7 +480,13 @@ export const AboutPage = () => {
             className="text-center p-12 glass-panel rounded-[3rem] shadow-2xl border-2 border-blue-500/20"
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-900 dark:text-white">
-              Ready to Experience Excellence?
+              <GradientText
+                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Ready to Experience Excellence?
+              </GradientText>
             </h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 mb-10">
               Discover our comprehensive range of industrial solutions and take

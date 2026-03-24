@@ -13,12 +13,14 @@ import {
   Award,
 } from "lucide-react";
 import { AnimatedCounter } from "./AnimatedCounter";
-import CircularGallery from "./CircularGallery";
+import ChromaGrid from "./ChromaGrid";
+import GradientText from './TextGradient';
 import HeavyDuty from "../assets/Heavy Duty Impact Wrench.jpg";
 import Precision from "../assets/Precision.jpg";
 import ProSafety from "../assets/Pro Safety Harness.jpg";
 import IndustrialMotor from "../assets/Industrial Motor 50HP.jpg";
 import WorkshopExtractionSystem from "../assets/Workshop.jpg";
+
 const categories = [
   "All",
   "Industrial",
@@ -156,10 +158,13 @@ export const ProductPage = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight"
           >
-            Explore Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Product Range
-            </span>
+            <GradientText
+              colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+              animationSpeed={8}
+              showBorder={false}
+            >
+              Explore Our Product Range
+            </GradientText>
           </motion.h1>
 
           <motion.p
@@ -281,7 +286,8 @@ export const ProductPage = () => {
       {/* 3. PRODUCT GALLERY */}
       <div
         id="products-grid"
-        className="w-full h-[600px] mb-20 relative bg-black/50 border-y border-white/5 shadow-2xl overflow-hidden"
+        className="w-full mb-20 relative bg-black/50 border-y border-white/5 shadow-2xl overflow-hidden"
+        style={{ height: "600px", position: "relative" }}
       >
         <AnimatePresence mode="popLayout">
           {filteredProducts.length > 0 ? (
@@ -292,17 +298,30 @@ export const ProductPage = () => {
               exit={{ opacity: 0 }}
               className="w-full h-full"
             >
-              <CircularGallery
-                items={[...filteredProducts, ...filteredProducts, ...filteredProducts].map((product) => ({
-                  image: typeof product.image === "string" ? product.image : product.image.src,
-                  text: product.name,
-                }))}
-                bend={3}
-                textColor="#ffffff"
-                borderRadius={0.05}
-                scrollSpeed={2}
-                scrollEase={0.02}
-                font="bold 24px var(--font-space-grotesk)"
+              <ChromaGrid
+                items={(filteredProducts.length > 0 ? filteredProducts : allProducts).map((product, idx) => {
+                  const colors = [
+                    { border: "#3B82F6", grad: "linear-gradient(145deg, #3B82F6, #000)" }, // Blue
+                    { border: "#10B981", grad: "linear-gradient(180deg, #10B981, #000)" }, // Emerald
+                    { border: "#8B5CF6", grad: "linear-gradient(145deg, #8B5CF6, #000)" }, // Violet
+                    { border: "#06B6D4", grad: "linear-gradient(220deg, #06B6D4, #000)" }, // Cyan
+                  ];
+                  const c = colors[idx % colors.length];
+                  
+                  return {
+                    image: typeof product.image === "string" ? product.image : product.image.src,
+                    title: product.name,
+                    subtitle: product.category,
+                    handle: product.specs,
+                    borderColor: c.border,
+                    gradient: c.grad,
+                    url: "#"
+                  };
+                })}
+                radius={300}
+                damping={0.45}
+                fadeOut={0.6}
+                ease="power3.out"
               />
             </motion.div>
           ) : (
@@ -334,7 +353,7 @@ export const ProductPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         {/* Subtle overlay gradients for depth */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />

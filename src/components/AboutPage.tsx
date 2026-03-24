@@ -188,23 +188,13 @@ export const AboutPage = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-0 right-0 p-4 border-r border-t border-blue-500/30 font-mono text-[8px] text-blue-400 space-y-1"
               >
-                <div className="flex justify-between gap-4"><span>STATUS:</span> <span className="text-emerald-400">OPTIMAL</span></div>
-                <div className="flex justify-between gap-4"><span>LOAD:</span> <span>42.8%</span></div>
-                <div className="flex justify-between gap-4"><span>CORES:</span> <span>ACTIVE</span></div>
+               
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          animate={{ y: [0, 10, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-[8px] font-mono tracking-[0.3em] text-slate-500 uppercase">Scroll to Explore</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-blue-600 to-transparent" />
-        </motion.div>
+       
       </section>
 
       {/* 2. MISSION & VISION */}

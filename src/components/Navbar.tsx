@@ -38,10 +38,10 @@ export const Navbar = () => {
               S
             </div>
             <div className="flex flex-col justify-center leading-none -space-y-0.5">
-              <span className="font-sans font-black text-xl sm:text-2xl md:text-3xl tracking-[0.05em] text-white uppercase">
+              <span className="font-vintage font-black text-xl sm:text-2xl md:text-3xl tracking-[0.08em] text-white uppercase">
                 SULAV
               </span>
-              <span className="font-sans text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.2em] text-blue-400 uppercase font-bold">
+              <span className="font-vintage text-[12px] sm:text-[13px] md:text-[14px] tracking-[0.2em] text-blue-400 uppercase font-bold">
                 MECHATRONICS
               </span>
             </div>

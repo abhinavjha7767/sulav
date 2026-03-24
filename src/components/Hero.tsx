@@ -8,7 +8,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./hero.module.css";
 
-
 function CrosshairIcon({
   size = 40,
   dashArray = "4 4",
@@ -67,7 +66,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-[0.02em] uppercase mb-6 leading-[1.1]"
+          className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-[0.04em] uppercase mb-6 leading-[1.1]"
         >
           Welcome to <br className="sm:hidden" /> Sulav Mechatronics
         </motion.h2>
@@ -79,18 +78,11 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="inline-block px-8 py-2 md:px-12 md:py-3 border border-white/30 rounded-full bg-white/5 backdrop-blur-md mb-10"
         >
-          <span className="text-[10px] md:text-xs font-vintage uppercase tracking-[0.4em] text-blue-400">
+          <span className="text-[10px] md:text-[20px] lg:text-[20px] font-vintage uppercase tracking-[0.4em] text-blue-400">
             Precision Engineering & Industrial Excellence
           </span>
         </motion.div>
 
-        {/* Vertical Separator */}
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: "40px" }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="w-[1px] bg-white/40 mb-10"
-        />
 
         {/* Description Text */}
         <motion.p

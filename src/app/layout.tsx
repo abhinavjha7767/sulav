@@ -2,7 +2,6 @@
   import type { ReactNode } from "react";
   import "../index.css";
   import { ClientEffects } from "@/src/components/ClientEffects";
-  import LiquidEther from "@/src/components/LiquidEther";
 
 import { Inter, Space_Grotesk, Space_Mono, Courier_Prime, Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -62,26 +61,6 @@ const courierPrime = Courier_Prime({
         <body
           className={`${geist.variable} ${spaceGrotesk.variable} ${spaceMono.variable} ${courierPrime.variable} antialiased bg-black text-white selection:bg-blue-500/30 font-sans`}
         >
-          {/* Global LiquidEther Background Effect */}
-          <div className="fixed inset-0 z-[40] pointer-events-none opacity-60 mix-blend-screen">
-            <LiquidEther
-              colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-              mouseForce={20}
-              cursorSize={100}
-              isViscous
-              viscous={30}
-              iterationsViscous={32}
-              iterationsPoisson={32}
-              resolution={0.5}
-              isBounce={false}
-              autoDemo
-              autoSpeed={0.5}
-              autoIntensity={2.2}
-              takeoverDuration={0.25}
-              autoResumeDelay={3000}
-              autoRampDuration={0.6}
-            />
-          </div>
           <ClientEffects />
           <div className="relative z-10">
             {children}

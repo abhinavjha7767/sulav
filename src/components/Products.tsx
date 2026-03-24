@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PrecisionMeasuring from "../assets/Precision Measuring Tools.jpg";
+import CircularGallery from "./CircularGallery";
 
 const categoriesData = [
   {
@@ -165,65 +166,23 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
         </p>
       </div>
 
-      {/* 2. Photo carousel */}
-      <div className="bg-slate-900 rounded-[14px] overflow-hidden shadow-sm border border-slate-800/60">
-        <div className="relative aspect-[16/9] w-full bg-slate-800 flex flex-col group overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentIndex}
-              src={typeof category.items[currentIndex].image === 'string' ? category.items[currentIndex].image : category.items[currentIndex].image.src}
-              alt={category.items[currentIndex].name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </AnimatePresence>
-
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
-
-          <div className="absolute bottom-4 left-5 z-10 w-full">
-            <AnimatePresence mode="wait">
-              <motion.h4
-                key={currentIndex}
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                className="text-white font-medium text-[15px] drop-shadow-md"
-              >
-                {category.items[currentIndex].name}
-              </motion.h4>
-            </AnimatePresence>
-          </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white shadow-md text-blue-600 rounded-full hover:scale-105 transition-transform"
-          >
-            <ChevronLeft className="w-4 h-4 ml-[2px]" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white shadow-md text-blue-600 rounded-full hover:scale-105 transition-transform"
-          >
-            <ChevronRight className="w-4 h-4 mr-[2px]" />
-          </button>
-        </div>
-
-        <div className="flex justify-center items-center h-8 bg-slate-900 gap-[6px]">
-          {category.items.map((_: any, idx: number) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`rounded-full transition-colors duration-200 ${
-                idx === currentIndex
-                  ? "w-2 h-2 bg-blue-500"
-                  : "w-1.5 h-1.5 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400"
-              }`}
-            />
-          ))}
-        </div>
+      {/* 2. Photo carousel with CircularGallery */}
+      <div className="w-full h-[400px] md:h-[500px] relative rounded-[14px] overflow-hidden bg-black border border-white/5 mb-6 group cursor-grab active:cursor-grabbing">
+        <CircularGallery
+          items={[...category.items, ...category.items, ...category.items].map((item: any) => ({
+            image: typeof item.image === 'string' ? item.image : item.image.src,
+            text: item.name
+          }))}
+          bend={1}
+          textColor="#ffffff"
+          borderRadius={0.05}
+          scrollSpeed={2}
+          scrollEase={0.05}
+          font="bold 24px var(--font-space-grotesk)"
+        />
+        {/* Subtle overlay gradients for depth */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent pointer-events-none z-10" />
       </div>
 
       {/* 3. Toggle button - Dark Blue styling like screenshot */}

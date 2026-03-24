@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-black pt-24 pb-12 border-t border-white/5 transition-colors duration-300">
       <div className="w-full max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center sm:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center max-w-5xl mx-auto">
           <div>
             <h4 className="font-display font-bold text-white mb-6 text-lg tracking-wide">
               Quick Links
@@ -69,7 +69,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div></div>
         </div>
 
         <div className="pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col items-center justify-center relative">

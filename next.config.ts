@@ -2,8 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+
   devIndicators: {
-    buildActivity: false,
+    buildActivity: process.env.NODE_ENV !== "production",
   },
 
   images: {
@@ -35,39 +39,48 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
 
-  compress: true,
-  poweredByHeader: false,
-
-  // 🚀 Better caching for performance
   async headers() {
+    const cacheOneDay = [
+      { key: "Cache-Control", value: "public, max-age=86400" },
+    ];
+
     return [
+      // Security headers for all routes
       {
-        source: "/:path*\\.(jpg|jpeg|png|svg|webp|gif|ico|woff|woff2|ttf|otf)",
+        source: "/:path*",
         headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
         ],
       },
+
+      // Next.js static assets
       {
         source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
+
+      // Next.js optimized images
       {
-        source: "/:path*\\.(js|css)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+       source: "/_next/image/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
       },
+
+      // Public folder assets
+      {
+        source: "/static/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+
+      // Root files
+      { source: "/favicon.ico",      headers: cacheOneDay },
+      { source: "/site.webmanifest", headers: cacheOneDay },
+      { source: "/robots.txt",       headers: cacheOneDay },
+      { source: "/sitemap.xml",      headers: cacheOneDay },
     ];
   },
 };

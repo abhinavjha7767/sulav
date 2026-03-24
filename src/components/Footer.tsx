@@ -24,7 +24,7 @@ export const Footer = () => {
 
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white mb-6 text-lg tracking-wide">
-              Products
+              PRODUCTS
             </h4>
             <ul className="space-y-4">
               <FooterLink href="/products#industrial">Industrial Machines</FooterLink>

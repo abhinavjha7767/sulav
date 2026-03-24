@@ -15,22 +15,22 @@ export const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="#home">Home</FooterLink>
-              <FooterLink href="#about">About Us</FooterLink>
-              <FooterLink href="#products">Products</FooterLink>
-              <FooterLink href="#contact">Contact</FooterLink>
+              <FooterLink href="/#home">Home</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/products">Products</FooterLink>
+              <FooterLink href="/#contact">Contact</FooterLink>
             </ul>
           </div>
 
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white mb-6 text-lg tracking-wide">
-              Services
+              Products
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="#products">Industrial Machines</FooterLink>
-              <FooterLink href="#products">Mechatronics Solutions</FooterLink>
-              <FooterLink href="#products">Power Tools</FooterLink>
-              <FooterLink href="#products">Workshop Equipment</FooterLink>
+              <FooterLink href="/products#industrial">Industrial Machines</FooterLink>
+              <FooterLink href="/products#automation">Mechatronics Solutions</FooterLink>
+              <FooterLink href="/products#power-tools">Power Tools</FooterLink>
+              <FooterLink href="/products#workshop">Workshop Equipment</FooterLink>
             </ul>
           </div>
 

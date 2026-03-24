@@ -788,6 +788,9 @@
   .resize-none {
     resize: none;
   }
+  .scroll-mt-24 {
+    scroll-margin-top: calc(var(--spacing) * 24);
+  }
   .appearance-none {
     appearance: none;
   }

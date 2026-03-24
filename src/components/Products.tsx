@@ -145,11 +145,12 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
 
   return (
     <motion.div
+      id={category.id}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="mb-20 w-full flex flex-col max-w-[900px] mx-auto"
+      className="mb-20 w-full flex flex-col max-w-[900px] mx-auto scroll-mt-24"
     >
       {/* 1. Header & Description */}
       <div className="flex flex-col mb-4">

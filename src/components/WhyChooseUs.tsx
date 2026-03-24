@@ -29,13 +29,13 @@ const reasons = [
 
 export const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-slate-100/50 dark:bg-slate-900/30 transition-colors duration-300">
+    <section className="py-24 bg-black/20 transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
             Why Choose <span className="text-blue-500">Sulav</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             We don't just sell machines; we build long-term partnerships that drive industrial growth.
           </p>
         </div>
@@ -48,13 +48,13 @@ export const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-8 rounded-3xl hover:bg-white dark:hover:bg-white/10 transition-all group shadow-md dark:shadow-none"
+              className="glass-panel p-8 rounded-3xl hover:bg-white/10 transition-all group shadow-none"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <reason.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <reason.icon className="w-8 h-8 text-blue-400" />
               </div>
-              <h3 className="text-xl font-display font-bold mb-3 text-slate-900 dark:text-white">{reason.title}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{reason.desc}</p>
+              <h3 className="text-xl font-display font-bold mb-3 text-white">{reason.title}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{reason.desc}</p>
             </motion.div>
           ))}
         </div>

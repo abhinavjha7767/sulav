@@ -198,8 +198,9 @@ export const AboutPage = () => {
       </section>
 
       {/* 2. MISSION & VISION */}
-      <section className="py-24 bg-white/30 dark:bg-transparent backdrop-blur-sm">
-        <div className="w-full mx-auto px-6 max-w-6xl">
+      <section className="py-24 backdrop-blur-sm relative">
+        <div className="absolute inset-0 bg-blue-500/5 z-0" />
+        <div className="w-full mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -325,8 +326,9 @@ export const AboutPage = () => {
       </section>
 
       {/* 4. TIMELINE / HISTORY */}
-      <section className="py-24 bg-slate-50/10 dark:bg-transparent">
-        <div className="w-full mx-auto px-6">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/5 opacity-40 z-0" />
+        <div className="w-full mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               Our Journey
@@ -400,8 +402,9 @@ export const AboutPage = () => {
       </section>
 
       {/* 6. OUR EXPERT TEAM */}
-      <section className="py-24 bg-slate-50/10 dark:bg-transparent">
-        <div className="w-full mx-auto px-6">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/5 opacity-40 z-0" />
+        <div className="w-full mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               Our Expert Team
@@ -525,7 +528,7 @@ const TimelineItem = ({ icon: Icon, title, desc, align }: any) => (
 const CertCard = ({ title, desc, icon: Icon = Award }: any) => (
   <motion.div
     whileHover={{ scale: 1.02 }}
-    className="bg-white/50 dark:bg-white/5 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 text-center shadow-sm"
+    className="bg-white/5 p-8 rounded-[2rem] border border-white/5 text-center shadow-sm"
   >
     <div className="w-12 h-12 rounded-2xl bg-blue-600/10 flex items-center justify-center mx-auto mb-6 text-blue-600 dark:text-blue-500">
       <Icon className="w-6 h-6" />

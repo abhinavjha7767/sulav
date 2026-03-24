@@ -7,11 +7,11 @@ export const Footer = () => {
 
 
   return (
-    <footer className="bg-white dark:bg-slate-950 pt-24 pb-12 border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
+    <footer className="bg-black pt-24 pb-12 border-t border-white/5 transition-colors duration-300">
       <div className="w-full max-w-6xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center sm:text-left">
           <div>
-            <h4 className="font-display font-bold text-slate-900 dark:text-white mb-6 text-lg tracking-wide">
+            <h4 className="font-display font-bold text-white mb-6 text-lg tracking-wide">
               Quick Links
             </h4>
             <ul className="space-y-4">

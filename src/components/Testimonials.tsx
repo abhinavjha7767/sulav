@@ -27,13 +27,13 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-300">
+    <section className="py-24 relative overflow-hidden bg-black transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
             Client <span className="text-blue-500">Feedback</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             Hear from the leaders who are transforming their industries with our solutions.
           </p>
         </div>
@@ -46,16 +46,16 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-10 rounded-3xl relative shadow-lg dark:shadow-none"
+              className="glass-panel p-10 rounded-3xl relative shadow-none"
             >
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-slate-200 dark:text-white/5" />
-              <p className="text-slate-700 dark:text-slate-300 italic mb-8 leading-relaxed relative z-10">
+              <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5" />
+              <p className="text-slate-300 italic mb-8 leading-relaxed relative z-10">
                 "{t.text}"
               </p>
               <div className="flex items-center gap-4">
-                <img src={t.avatar} alt={t.author} className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10" />
+                <img src={t.avatar} alt={t.author} className="w-12 h-12 rounded-full border border-white/10" />
                 <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white text-sm">{t.author}</h4>
+                  <h4 className="font-bold text-white text-sm">{t.author}</h4>
                   <p className="text-xs text-slate-500">{t.role}</p>
                 </div>
               </div>

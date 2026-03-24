@@ -66,7 +66,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative bg-slate-50/10 dark:bg-transparent backdrop-blur-[2px] transition-colors duration-300"
+      className="py-24 relative bg-transparent backdrop-blur-[2px] transition-colors duration-300"
     >
       <div className="w-full mx-auto px-6">
         <AnimatePresence mode="wait">
@@ -102,7 +102,7 @@ export const Contact = () => {
                 <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
                   Thank You!
                 </h2>
-                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-slate-300 max-w-md mx-auto leading-relaxed">
                   Your message has been sent successfully. We'll get back to you as soon as possible.
                 </p>
               </motion.div>
@@ -167,15 +167,15 @@ export const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-2xl dark:shadow-none"
+            className="lg:col-span-7 glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-none"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-blue-900 dark:text-white text-center">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-white text-center">
               Send us a Message
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                  <label className="text-sm font-bold text-slate-300">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -184,11 +184,11 @@ export const Contact = () => {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                  <label className="text-sm font-bold text-slate-300">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -197,7 +197,7 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                   />
                 </div>
               </div>
@@ -302,7 +302,7 @@ export const Contact = () => {
 
           {/* Right Side: Info Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-blue-900 dark:text-white text-center">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-white text-center">
               Contact Information
             </h2>
 
@@ -368,7 +368,7 @@ const InfoCard = ({
     initial={{ opacity: 0, x: 20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
-    className="bg-white/80 dark:bg-slate-900/50 backdrop-blur-md border border-slate-100 dark:border-white/5 p-6 rounded-2xl flex items-start gap-6 shadow-sm hover:shadow-md transition-all group"
+    className="bg-slate-900/50 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex items-start gap-6 shadow-none hover:shadow-md transition-all group"
   >
     <div
       className={`w-14 h-14 rounded-2xl ${iconColor} flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
@@ -376,14 +376,14 @@ const InfoCard = ({
       <Icon className="w-7 h-7 text-white" />
     </div>
     <div className="space-y-1">
-      <h4 className="font-bold text-blue-900 dark:text-white text-lg">
+      <h4 className="font-bold text-white text-lg">
         {title}
       </h4>
       <div className="space-y-1">
         {lines.map((line: string, i: number) => (
           <p
             key={i}
-            className={`text-slate-600 dark:text-slate-400 text-sm md:text-base leading-tight ${line.includes("@") ? "text-blue-600 dark:text-blue-400 font-medium" : ""}`}
+            className={`text-slate-400 text-sm md:text-base leading-tight ${line.includes("@") ? "text-blue-400 font-medium" : ""}`}
           >
             {line}
           </p>

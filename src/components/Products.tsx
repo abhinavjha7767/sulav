@@ -155,19 +155,19 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
       {/* 1. Header & Description */}
       <div className="flex flex-col mb-4">
         <div className="flex items-center gap-2 mb-2">
-          <category.icon className="w-5 h-5 text-blue-600" />
-          <h3 className="text-[17px] font-semibold text-blue-800 dark:text-blue-500">
+          <category.icon className="w-5 h-5 text-blue-500" />
+          <h3 className="text-[17px] font-semibold text-white">
             {category.title}
           </h3>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-[14px] leading-snug">
+        <p className="text-slate-400 text-[14px] leading-snug">
           {category.description}
         </p>
       </div>
 
       {/* 2. Photo carousel */}
-      <div className="bg-white dark:bg-slate-900 rounded-[14px] overflow-hidden shadow-sm border border-slate-200/60 dark:border-slate-800/60">
-        <div className="relative aspect-[16/9] w-full bg-slate-100 dark:bg-slate-800 flex flex-col group overflow-hidden">
+      <div className="bg-slate-900 rounded-[14px] overflow-hidden shadow-sm border border-slate-800/60">
+        <div className="relative aspect-[16/9] w-full bg-slate-800 flex flex-col group overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentIndex}
@@ -211,7 +211,7 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
           </button>
         </div>
 
-        <div className="flex justify-center items-center h-8 bg-white dark:bg-slate-900 gap-[6px]">
+        <div className="flex justify-center items-center h-8 bg-slate-900 gap-[6px]">
           {category.items.map((_: any, idx: number) => (
             <button
               key={idx}
@@ -244,7 +244,7 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="mt-4 bg-white dark:bg-slate-900 rounded-xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none"
+            className="mt-4 bg-slate-900 rounded-xl p-8 border border-slate-800 shadow-none"
           >
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {category.subCategories.map((sub: any, idx: number) => {
@@ -255,9 +255,9 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2, delay: idx * 0.03 }}
-                    className="group/sub bg-[#f8fafc] dark:bg-slate-800/40 rounded-xl p-6 flex flex-col items-center text-center 
-                               border border-slate-100 dark:border-slate-700/30
-                               hover:border-blue-200 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md
+                    className="group/sub bg-slate-800/40 rounded-xl p-6 flex flex-col items-center text-center 
+                               border border-slate-700/30
+                               hover:border-blue-200 hover:bg-slate-800 hover:shadow-md
                                transition-all duration-300 cursor-pointer"
                   >
                     <div className="w-12 h-12 flex items-center justify-center mb-3">
@@ -282,14 +282,14 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
 
 export const Products = () => {
   return (
-    <section id="divisions" className="py-24 relative bg-slate-50/10 dark:bg-transparent backdrop-blur-[1px]">
+    <section id="divisions" className="py-24 relative bg-transparent backdrop-blur-[1px]">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold mb-4 text-slate-900 dark:text-white"
+            className="text-4xl md:text-5xl font-display font-bold mb-4 text-white"
           >
             Our <span className="text-blue-500 uppercase">Divisions</span>
           </motion.h2>

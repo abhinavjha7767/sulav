@@ -13,6 +13,7 @@ import {
   Award,
 } from "lucide-react";
 import { AnimatedCounter } from "./AnimatedCounter";
+import CircularGallery from "./CircularGallery";
 import HeavyDuty from "../assets/Heavy Duty Impact Wrench.jpg";
 import Precision from "../assets/Precision.jpg";
 import ProSafety from "../assets/Pro Safety Harness.jpg";
@@ -277,84 +278,66 @@ export const ProductPage = () => {
         </div>
       </div>
 
-      {/* 3. PRODUCT GRID */}
+      {/* 3. PRODUCT GALLERY */}
       <div
         id="products-grid"
-        className="w-full mx-auto px-6 py-20 min-h-[500px]"
+        className="w-full h-[600px] mb-20 relative bg-black/50 border-y border-white/5 shadow-2xl overflow-hidden"
       >
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((product, idx) => (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  key={product.id}
-                  className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20"
-                >
-                  <div className="relative h-64 overflow-hidden bg-slate-100 dark:bg-slate-800/50">
-                    <img
-                      src={
-                        typeof product.image === "string"
-                          ? product.image
-                          : product.image.src
-                      }
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-white/90 dark:bg-black/60 backdrop-blur-md text-slate-800 dark:text-slate-200 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
-                        {product.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-6 relative bg-white dark:bg-slate-900 z-10">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 line-clamp-2 min-h-[40px]">
-                      {product.specs}
-                    </p>
-                  </div>
-                </motion.div>
-              ))
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="col-span-full py-20 text-center"
+        <AnimatePresence mode="popLayout">
+          {filteredProducts.length > 0 ? (
+            <motion.div
+              key="gallery"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="w-full h-full"
+            >
+              <CircularGallery
+                items={[...filteredProducts, ...filteredProducts, ...filteredProducts].map((product) => ({
+                  image: typeof product.image === "string" ? product.image : product.image.src,
+                  text: product.name,
+                }))}
+                bend={3}
+                textColor="#ffffff"
+                borderRadius={0.05}
+                scrollSpeed={2}
+                scrollEase={0.02}
+                font="bold 24px var(--font-space-grotesk)"
+              />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="empty"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="w-full h-full flex flex-col items-center justify-center text-center p-6"
+            >
+              <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-4">
+                <Search className="w-8 h-8 text-slate-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                No products found
+              </h3>
+              <p className="text-slate-400">
+                Try adjusting your filters or search query.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveCategory("All");
+                }}
+                className="mt-6 text-blue-500 font-semibold hover:underline"
               >
-                <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="w-8 h-8 text-slate-400" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  No products found
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400">
-                  Try adjusting your filters or search query.
-                </p>
-                <button
-                  onClick={() => {
-                    setSearchQuery("");
-                    setActiveCategory("All");
-                  }}
-                  className="mt-6 text-blue-600 font-semibold hover:underline"
-                >
-                  Clear all filters
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+                Clear all filters
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Subtle overlay gradients for depth */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
       </div>
 
       {/* 6. TRUST / STATS STRIP */}

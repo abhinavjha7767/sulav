@@ -79,7 +79,7 @@ export const Footer = () => {
               href="https://www.wegrowconsultancyandsolution.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-500 hover:underline transition-colors"
+              className="text-[#9fcd25] dark:text-[#9fcd25] hover:underline transition-colors"
             >
               WeGrow Consultancy and Solution
             </a>

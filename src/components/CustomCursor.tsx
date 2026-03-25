@@ -1130,7 +1130,8 @@ export default function CustomCursor({
     }
 
     function generateColor(): ColorRGB {
-      const c = HSVtoRGB(Math.random(), 1.0, 1.0);
+      const hue = 0.5 + Math.random() * 0.2; // 0.5 (Cyan) to 0.7 (Blue)
+      const c = HSVtoRGB(hue, 1.0, 1.0);
       c.r *= 0.15;
       c.g *= 0.15;
       c.b *= 0.15;

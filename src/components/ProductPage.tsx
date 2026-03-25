@@ -159,7 +159,7 @@ export const ProductPage = () => {
             className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight"
           >
             <GradientText
-              colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
               animationSpeed={8}
               showBorder={false}
             >

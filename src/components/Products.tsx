@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PrecisionMeasuring from "../assets/Precision Measuring Tools.jpg";
-import ChromaGrid from "./ChromaGrid";
 import GradientText from "./TextGradient";
 
 const categoriesData = [
@@ -167,33 +166,21 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
         </p>
       </div>
 
-      {/* 2. Photo carousel with ChromaGrid */}
-      <div className="w-full h-[400px] md:h-[500px] relative rounded-[14px] overflow-hidden bg-black border border-white/5 mb-6 group !cursor-auto active:cursor-auto">
-        <ChromaGrid
-          items={[...category.items, ...category.items, ...category.items].map((item: any, idx: number) => {
-            const colors = [
-              { border: "#3B82F6", grad: "linear-gradient(145deg, #3B82F6, #000)" },
-              { border: "#10B981", grad: "linear-gradient(180deg, #10B981, #000)" },
-              { border: "#8B5CF6", grad: "linear-gradient(145deg, #8B5CF6, #000)" },
-              { border: "#06B6D4", grad: "linear-gradient(220deg, #06B6D4, #000)" },
-            ];
-            const c = colors[idx % colors.length];
-            return {
-              image: typeof item.image === 'string' ? item.image : item.image.src,
-              title: item.name,
-              subtitle: category.title,
-              borderColor: c.border,
-              gradient: c.grad,
-            };
-          })}
-          radius={300}
-          damping={0.45}
-          fadeOut={0.6}
-          ease="power3.out"
-        />
-        {/* Subtle overlay gradients for depth */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent pointer-events-none z-10" />
+      {/* 2. Featured Images Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {category.items.map((item: any, idx: number) => (
+          <div key={idx} className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden group">
+            <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10" />
+            <img 
+              src={typeof item.image === 'string' ? item.image : item.image.src} 
+              alt={item.name} 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-20">
+              <h4 className="text-white font-medium text-sm">{item.name}</h4>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* 3. Toggle button - Dark Blue styling like screenshot */}
@@ -206,7 +193,7 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
         </button>
       </div>
 
-      {/* 4. Expandable sub-categories grid - Matching card style in screenshots */}
+      {/* 4. Expandable sub-categories grid */}
       <AnimatePresence>
         {showSubCategories && (
           <motion.div
@@ -225,7 +212,7 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2, delay: idx * 0.03 }}
-                    className="group/sub bg-slate-800/40 rounded-xl p-6 flex flex-col items-center text-center 
+                    className="group/sub bg-slate-800/40 rounded-xl p-6 flex flex-col items-center text-center
                                border border-slate-700/30
                                hover:border-blue-200 hover:bg-slate-800 hover:shadow-md
                                transition-all duration-300 cursor-pointer"
@@ -259,10 +246,10 @@ export const Products = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold mb-4 text-white"
+            className="text-4xl md:text-5xl font-display font-bold mb-4 text-center"
           >
             <GradientText
-              colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
               animationSpeed={8}
               showBorder={false}
             >
@@ -292,8 +279,14 @@ export const Products = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Need Help Choosing the Right Product?
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <GradientText
+                  colors={["#ffffff", "#60A5FA", "#ffffff"]}
+                  animationSpeed={6}
+                  showBorder={false}
+                >
+                  Need Help Choosing the Right Product?
+                </GradientText>
               </h2>
               <p className="text-blue-100 text-lg mb-10">
                 Our team of industrial experts is ready to consult with you and find the perfect machinery for your specific requirements.

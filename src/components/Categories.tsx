@@ -15,6 +15,7 @@ import {
   Sprout
 } from 'lucide-react';
 import workshopImg from "../assets/Workshop Equipment.jpg";
+import GradientText from "./TextGradient";
 
 const categories = [
   {
@@ -75,18 +76,24 @@ const categories = [
 
 export const Categories = () => {
   return (
-    <section id="categories" className="py-24 bg-slate-50/20 dark:bg-transparent backdrop-blur-[1px] transition-colors duration-300">
+    <section id="categories" className="py-24 bg-transparent backdrop-blur-[1px] transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold mb-4 text-slate-900 dark:text-white"
+            className="text-4xl md:text-5xl font-display font-bold mb-4"
           >
-            Product <span className="text-blue-500">Categories</span>
+            <GradientText
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+              animationSpeed={8}
+              showBorder={false}
+            >
+              Product Categories
+            </GradientText>
           </motion.h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             Explore our comprehensive range of industrial equipment designed for maximum efficiency and reliability.
           </p>
         </div>
@@ -118,7 +125,7 @@ const CategoryCard = ({ title, icon: Icon, image, desc, index }: CategoryCardPro
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative h-72 md:h-80 rounded-[2rem] overflow-hidden cursor-pointer shadow-lg dark:shadow-none bg-slate-100 dark:bg-slate-800"
+      className="group relative h-72 md:h-80 rounded-[2rem] overflow-hidden cursor-pointer bg-slate-800"
     >
       <Image
         src={imageSrc}

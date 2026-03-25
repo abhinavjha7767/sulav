@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, Clock, Award } from 'lucide-react';
+import GradientText from "./TextGradient";
 
 const reasons = [
   {
@@ -32,8 +33,14 @@ export const WhyChooseUs = () => {
     <section className="py-24 bg-black/20 transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
-            Why Choose <span className="text-blue-500">Sulav</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <GradientText
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+              animationSpeed={8}
+              showBorder={false}
+            >
+              Why Choose Sulav
+            </GradientText>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             We don't just sell machines; we build long-term partnerships that drive industrial growth.

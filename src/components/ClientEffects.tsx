@@ -27,7 +27,7 @@ export function ClientEffects() {
     <>
       <div className="fixed inset-0 z-[40] pointer-events-none opacity-60 mix-blend-screen">
         <LiquidEther
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          colors={['#1A6FFF', '#00C2FF', '#005EB8']}
           mouseForce={20}
           cursorSize={100}
           isViscous

@@ -14,6 +14,7 @@ import {
   CheckCircle,
   Home,
 } from "lucide-react";
+import GradientText from "./TextGradient";
 
 export const Contact = () => {
   const router = useRouter();
@@ -147,7 +148,7 @@ export const Contact = () => {
                 </button>
                 <button
                   onClick={handleSendAnother}
-                  className="px-8 py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 font-bold rounded-2xl transition-all flex items-center justify-center gap-3 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900"
+                  className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-bold rounded-2xl transition-all flex items-center justify-center gap-3 hover:bg-blue-400 hover:text-slate-900"
                 >
                   <Send className="w-5 h-5" />
                   Send Another Message
@@ -169,8 +170,14 @@ export const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-7 glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-none"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-white text-center">
-              Send us a Message
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
+              <GradientText
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Send us a Message
+              </GradientText>
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
@@ -178,14 +185,7 @@ export const Contact = () => {
                   <label className="text-sm font-bold text-slate-300">
                     Full Name <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
-                  />
+                    className="w-full bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-300">
@@ -197,21 +197,21 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
+                    className="w-full bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                  <label className="text-sm font-bold text-slate-300">
                     Phone Number
                   </label>
                   <div className="flex gap-2">
                     <select
                       value={countryCode}
                       onChange={(e) => setCountryCode(e.target.value)}
-                      className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl px-3 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white appearance-none cursor-pointer min-w-[100px]"
+                      className="bg-slate-900 border border-white/10 rounded-xl px-3 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white appearance-none cursor-pointer min-w-[100px]"
                     >
                       <option value="+977">🇳🇵 +977</option>
                       <option value="+91">🇮🇳 +91</option>
@@ -236,12 +236,12 @@ export const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="XXXXXXXXXX"
-                      className="flex-1 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white"
+                      className="flex-1 bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                  <label className="text-sm font-bold text-slate-300">
                     Company Name
                   </label>
                   <input
@@ -250,13 +250,13 @@ export const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company name (optional)"
-                    className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white"
+                    className="w-full bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                <label className="text-sm font-bold text-slate-300">
                   Subject
                 </label>
                 <div className="relative">
@@ -264,7 +264,7 @@ export const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white appearance-none cursor-pointer"
+                    className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white appearance-none cursor-pointer"
                   >
                     <option value="">Select a subject</option>
                     <option value="General Inquiry">General Inquiry</option>
@@ -280,7 +280,7 @@ export const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                <label className="text-sm font-bold text-slate-300">
                   Message
                 </label>
                 <textarea
@@ -288,7 +288,7 @@ export const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-white resize-none"
+                  className="w-full bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white resize-none"
                   placeholder="Tell us more about your inquiry..."
                 ></textarea>
               </div>
@@ -302,8 +302,14 @@ export const Contact = () => {
 
           {/* Right Side: Info Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-white text-center">
-              Contact Information
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
+              <GradientText
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                Contact Information
+              </GradientText>
             </h2>
 
             <div className="grid gap-6">

@@ -23,7 +23,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-slate-900 dark:text-white mb-6 text-lg tracking-wide">
+            <h4 className="font-display font-bold text-white mb-6 text-lg tracking-wide uppercase">
               PRODUCTS
             </h4>
             <ul className="space-y-4">
@@ -35,14 +35,14 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-slate-900 dark:text-white mb-6 text-lg tracking-wide">
+            <h4 className="font-display font-bold text-white mb-6 text-lg tracking-wide">
               Contact Info
             </h4>
-            <ul className="space-y-4 text-slate-600 dark:text-slate-400 text-sm font-medium">
+            <ul className="space-y-4 text-slate-400 text-sm font-medium">
               <li>
                 <a
                   href="mailto:info@sulavmachinery.com"
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   info@sulavmachinery.com
                 </a>
@@ -50,7 +50,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="mailto:durluv.bhandari@sulavmachinery.com"
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   durluv.bhandari@sulavmachinery.com
                 </a>
@@ -61,7 +61,7 @@ export const Footer = () => {
                   href="https://www.sulavmachinery.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   www.sulavmachinery.com
                 </a>
@@ -71,7 +71,7 @@ export const Footer = () => {
 
         </div>
 
-        <div className="pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col items-center justify-center relative">
+        <div className="pt-8 border-t border-white/5 flex flex-col items-center justify-center relative">
           <p className="text-slate-500 text-sm text-center">
             © 2025 Sulav Mechatronics & Machinery. All rights reserved. Managed
             by{" "}
@@ -101,7 +101,7 @@ const FooterLink = ({
   <li>
     <a
       href={href}
-      className="text-slate-600 dark:text-slate-400 text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors block"
+      className="text-slate-400 text-sm hover:text-blue-400 transition-colors block"
     >
       {children}
     </a>

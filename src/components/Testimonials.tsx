@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import GradientText from "./TextGradient";
 
 const testimonials = [
   {
@@ -30,8 +31,14 @@ export const Testimonials = () => {
     <section className="py-24 relative overflow-hidden bg-black transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
-            Client <span className="text-blue-500">Feedback</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <GradientText
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+              animationSpeed={8}
+              showBorder={false}
+            >
+              Client Feedback
+            </GradientText>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Hear from the leaders who are transforming their industries with our solutions.
@@ -46,7 +53,7 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-10 rounded-3xl relative shadow-none"
+              className="bg-slate-900 overflow-hidden p-10 rounded-3xl relative shadow-none border border-white/5"
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5" />
               <p className="text-slate-300 italic mb-8 leading-relaxed relative z-10">

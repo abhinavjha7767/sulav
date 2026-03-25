@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatedCounter } from "./AnimatedCounter";
+import GradientText from "./TextGradient";
 
 export const About = () => {
   return (
@@ -37,9 +38,15 @@ export const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white leading-tight">
-            Leading the Way in <br className="hidden md:block" />
-            <span className="text-blue-500">Industrial Innovation</span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 leading-tight">
+            <GradientText
+              colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+              animationSpeed={8}
+              showBorder={false}
+              className="!justify-start !mx-0"
+            >
+              Leading the Way in <br className="hidden md:block" /> Industrial Innovation
+            </GradientText>
           </h2>
           <p className="text-slate-400 mb-8 leading-relaxed">
             Sulav Mechatronics & Machinery is a premier provider of industrial automation and mechanical solutions. We specialize in delivering high-performance machinery that empowers businesses to scale their production with precision and speed.

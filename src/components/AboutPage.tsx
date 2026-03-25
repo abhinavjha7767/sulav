@@ -75,7 +75,7 @@ export const AboutPage = () => {
               className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.9] tracking-tighter"
             >
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >
@@ -218,7 +218,7 @@ export const AboutPage = () => {
                   </div>
                   <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white">
                     <GradientText
-                      colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                      colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                       animationSpeed={8}
                       showBorder={false}
                     >
@@ -241,7 +241,7 @@ export const AboutPage = () => {
                   </div>
                   <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white">
                     <GradientText
-                      colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                      colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                       animationSpeed={8}
                       showBorder={false}
                     >
@@ -307,7 +307,7 @@ export const AboutPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >
@@ -353,7 +353,7 @@ export const AboutPage = () => {
           <div className="text-center mb-20">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >
@@ -400,7 +400,7 @@ export const AboutPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >
@@ -441,7 +441,7 @@ export const AboutPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >
@@ -481,7 +481,7 @@ export const AboutPage = () => {
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-900 dark:text-white">
               <GradientText
-                colors={["#5227FF","#FF9FFC","#B19EEF","#5227FF"]}
+                colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
                 animationSpeed={8}
                 showBorder={false}
               >

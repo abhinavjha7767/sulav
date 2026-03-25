@@ -1,46 +1,11 @@
-"use client";
+ "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import GradientText from "./TextGradient";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import styles from "./hero.module.css";
-
-function CrosshairIcon({
-  size = 40,
-  dashArray = "4 4",
-}: {
-  size?: number;
-  dashArray?: string;
-}) {
-  const c = size / 2;
-  const r = c - 1;
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
-      <circle
-        cx={c}
-        cy={c}
-        r={r}
-        stroke="white"
-        strokeWidth="0.5"
-        strokeDasharray={dashArray}
-      />
-      <path
-        d={`M${c} 0V${size}M0 ${c}H${size}`}
-        stroke="white"
-        strokeWidth="0.5"
-      />
-    </svg>
-  );
-}
-
-// ─── Main Hero ───────────────────────────────────────────────────────────────
 
 export const Hero = () => {
-  const pathname = usePathname();
-
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black text-white px-4 md:px-6 pt-20 md:pt-32">
       {/* Background Video with Dark Overlay */}
@@ -50,7 +15,6 @@ export const Hero = () => {
           loop
           muted
           playsInline
-          webkit-playsinline="true"
           className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
           poster="/electronics_workshop_hero_1774336243668.png"
         >
@@ -62,14 +26,21 @@ export const Hero = () => {
       {/* 2. Main Content Stack */}
       <div className="relative z-20 w-full max-w-4xl mx-auto flex flex-col items-center text-center justify-center flex-grow py-12 px-2">
         {/* Animated Eyebrow / Welcome */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-[0.04em] uppercase mb-6 leading-[1.1]"
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+           className="mb-6"
         >
-          Welcome to <br className="sm:hidden" /> Sulav Mechatronics
-        </motion.h2>
+          <GradientText
+            colors={["#1A6FFF", "#00C2FF", "#FFFFFF", "#00C2FF", "#1A6FFF"]}
+            animationSpeed={6}
+            showBorder={false}
+            className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-[0.04em] uppercase leading-[1.1] text-center"
+          >
+            Welcome to <br className="sm:hidden" /> Sulav Mechatronics
+          </GradientText>
+        </motion.div>
 
         {/* Pill-shaped Sub-heading */}
         <motion.div
@@ -82,7 +53,6 @@ export const Hero = () => {
             Precision Engineering & Industrial Excellence
           </span>
         </motion.div>
-
 
         {/* Description Text */}
         <motion.p

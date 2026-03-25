@@ -181,14 +181,14 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)'
             }}
           />
-          <div className="relative z-10 flex-1 p-[10px] box-border">
-            <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
+          <div className="relative z-10 flex-[0_0_220px] p-[10px] box-border">
+            <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[14px]" />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && <span className="text-[0.95rem] opacity-80 text-right">{c.handle}</span>}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
-            {c.location && <span className="text-[0.85rem] opacity-85 text-right">{c.location}</span>}
+          <footer className="relative z-10 p-4 pt-1 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5">
+            <h3 className="m-0 text-[1.15rem] font-bold tracking-tight">{c.title}</h3>
+            {c.handle && <span className="text-[1rem] font-medium text-blue-400 text-right">{c.handle}</span>}
+            <p className="m-0 text-[0.95rem] opacity-90 font-medium text-slate-300">{c.subtitle}</p>
+            {c.location && <span className="text-[0.9rem] opacity-80 text-right text-slate-400">{c.location}</span>}
           </footer>
         </article>
       ))}

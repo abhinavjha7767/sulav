@@ -132,13 +132,13 @@ export const ProductPage = () => {
   return (
     <section
       id="products"
-      className="relative bg-slate-50/10 dark:bg-transparent min-h-screen overflow-hidden font-sans"
+      className="relative bg-transparent min-h-screen overflow-hidden font-sans"
     >
       {/* 1. HERO / HEADER SECTION */}
       <div className="relative w-full pt-32 pb-20 px-6 lg:pt-40 lg:pb-28 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-100/90 via-white to-slate-200/50 dark:from-blue-900/60 dark:via-slate-900/40 dark:to-slate-900/60 opacity-90 dark:opacity-80 z-0 transition-colors duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-black to-slate-900 opacity-90 z-0 transition-colors duration-500"></div>
           {/* Subtle Particles / Light waves */}
           <motion.div
             animate={{
@@ -186,7 +186,7 @@ export const ProductPage = () => {
             className="max-w-2xl mx-auto relative group"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-            <div className="relative bg-white/10 dark:bg-slate-900/50 backdrop-blur-md border border-white/20 dark:border-slate-700 p-2 rounded-full flex items-center shadow-2xl">
+            <div className="relative bg-slate-900/80 backdrop-blur-md border border-white/10 p-2 rounded-full flex items-center shadow-2xl">
               <Search className="w-6 h-6 text-white/70 ml-4" />
               <input
                 type="text"
@@ -216,9 +216,9 @@ export const ProductPage = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-white dark:bg-slate-900 rounded-3xl p-1 md:p-2 shadow-2xl shadow-blue-900/10 dark:shadow-blue-900/20 border border-slate-100 dark:border-slate-800"
+          className="bg-slate-900 rounded-3xl p-1 md:p-2 shadow-2xl shadow-blue-900/20 border border-slate-800"
         >
-          <div className="flex flex-col lg:flex-row items-stretch rounded-[22px] overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50/50 dark:from-slate-900/50 dark:to-slate-800/80 relative">
+          <div className="flex flex-col lg:flex-row items-stretch rounded-[22px] overflow-hidden bg-gradient-to-br from-slate-900 to-black relative">
             <div className="w-full lg:w-3/5 p-4 lg:p-10 relative overflow-hidden group/img">
               <div className="absolute inset-0 bg-blue-600/5 mix-blend-overlay z-10 pointer-events-none" />
               <img
@@ -233,19 +233,19 @@ export const ProductPage = () => {
             </div>
             <div className="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
               <div className="w-12 h-1 bg-blue-600 mb-8" />
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-slate-900 dark:text-white mb-6 leading-[0.9] tracking-tighter">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 leading-[0.9] tracking-tighter">
                 {allProducts[0].name}
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-6 leading-relaxed">
                 Experience unparalleled precision with our flagship CNC machine.
                 Designed for high-volume industrial manufacturing, it delivers
                 aerospace-grade tolerances 24/7.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                <span className="bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-slate-700 px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-sm">
+                <span className="bg-slate-800 text-blue-400 border border-slate-700 px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-sm">
                   <Zap className="w-4 h-4" /> 5-Axis Movement
                 </span>
-                <span className="bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-slate-700 px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-sm">
+                <span className="bg-slate-800 text-blue-400 border border-slate-700 px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-sm">
                   <Wrench className="w-4 h-4" /> 24k RPM Spindle
                 </span>
               </div>
@@ -256,7 +256,7 @@ export const ProductPage = () => {
       </div>
 
       {/* 2. SMART FILTER + SEARCH BAR (STICKY) */}
-      <div className="sticky top-[72px] lg:top-[88px] z-40 w-full py-4 bg-white/40 dark:bg-slate-950/40 backdrop-blur-xl border-y border-slate-200 dark:border-slate-800/50 shadow-sm transition-all duration-300">
+      <div className="sticky top-[72px] lg:top-[88px] z-40 w-full py-4 bg-slate-950/80 backdrop-blur-xl border-y border-white/5 shadow-sm transition-all duration-300">
         <div className="w-full mx-auto px-6 overflow-x-auto no-scrollbar">
           <div className="flex items-center justify-center gap-2 min-w-max mx-auto pb-1">
             {categories.map((cat) => (
@@ -286,8 +286,8 @@ export const ProductPage = () => {
       {/* 3. PRODUCT GALLERY */}
       <div
         id="products-grid"
-        className="w-full mb-20 relative bg-black/50 border-y border-white/5 shadow-2xl overflow-hidden"
-        style={{ height: "600px", position: "relative" }}
+        className="w-full mb-24 relative bg-black/70 border-y border-white/5 shadow-2xl transition-all duration-500"
+        style={{ minHeight: "850px", position: "relative" }}
       >
         <AnimatePresence mode="popLayout">
           {filteredProducts.length > 0 ? (
@@ -360,9 +360,9 @@ export const ProductPage = () => {
       </div>
 
       {/* 6. TRUST / STATS STRIP */}
-      <div className="w-full bg-slate-900 dark:bg-black py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent"></div>
+      <div className="w-full bg-black py-20 relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-luminosity"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
 
         <div className="w-full mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -397,3 +397,5 @@ export const ProductPage = () => {
     </section>
   );
 };
+
+export default ProductPage;

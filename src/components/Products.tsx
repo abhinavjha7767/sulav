@@ -153,34 +153,42 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="mb-20 w-full flex flex-col max-w-[900px] mx-auto scroll-mt-24"
     >
-      {/* 1. Header & Description */}
+      {/* 1. Header */}
       <div className="flex flex-col mb-4">
-        <div className="flex items-center gap-2 mb-2">
-          <category.icon className="w-5 h-5 text-blue-500" />
-          <h3 className="text-[17px] font-semibold text-white">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="p-2 bg-blue-500/10 rounded-lg border border-blue-500/20">
+            <category.icon className="w-6 h-6 text-blue-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-white tracking-tight">
             {category.title}
           </h3>
         </div>
-        <p className="text-slate-400 text-[14px] leading-snug">
-          {category.description}
-        </p>
       </div>
 
       {/* 2. Featured Images Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {category.items.map((item: any, idx: number) => (
-          <div key={idx} className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden group">
+          <div key={idx} className="relative w-full h-48 md:h-72 rounded-[2rem] overflow-hidden group border border-white/10">
             <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10" />
             <img 
               src={typeof item.image === 'string' ? item.image : item.image.src} 
               alt={item.name} 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
             />
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-20">
-              <h4 className="text-white font-medium text-sm">{item.name}</h4>
+            <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/40 to-transparent z-20">
+              <h4 className="text-white font-bold text-base tracking-wide drop-shadow-md">
+                {item.name}
+              </h4>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Description below images */}
+      <div className="mb-4">
+        <p className="text-slate-300 text-[15px] leading-relaxed max-w-2xl">
+          {category.description}
+        </p>
       </div>
 
       {/* 3. Toggle button - Dark Blue styling like screenshot */}
@@ -237,9 +245,13 @@ const CategorySection = ({ category, index }: { category: any; index: number }) 
   );
 };
 
-export const Products = () => {
+const Products = () => {
   return (
-    <section id="divisions" className="py-24 relative bg-transparent backdrop-blur-[1px]">
+    <section id="divisions" className="py-24 relative bg-black backdrop-blur-sm shadow-2xl overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <motion.h2
@@ -253,7 +265,7 @@ export const Products = () => {
               animationSpeed={8}
               showBorder={false}
             >
-              Our Divisions
+              OUR DIVISIONS
             </GradientText>
           </motion.h2>
         </div>
@@ -306,3 +318,5 @@ export const Products = () => {
     </section>
   );
 };
+
+export default Products;

@@ -38,7 +38,7 @@ export const Footer = () => {
             <h4 className="font-display font-bold text-white mb-6 text-lg tracking-wide">
               Contact Info
             </h4>
-            <ul className="space-y-4 text-slate-400 text-sm font-medium">
+            <ul className="space-y-4 text-slate-400 text-sm font-medium break-all">
               <li>
                 <a
                   href="mailto:info@sulavmachinery.com"
@@ -55,8 +55,7 @@ export const Footer = () => {
                   durluv.bhandari@sulavmachinery.com
                 </a>
               </li>
-              <li>Tilottama-9, Rupandehi, Nepal</li>
-              
+              <li className="break-words">Tilottama-9, Rupandehi, Nepal</li>
             </ul>
           </div>
 

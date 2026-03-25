@@ -67,7 +67,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative bg-slate-950 backdrop-blur-[2px] transition-colors duration-300"
+      className="min-h-screen py-20 md:py-32 relative bg-slate-950 backdrop-blur-[2px] transition-colors duration-300 flex items-center"
     >
       <div className="w-full mx-auto px-6">
         <AnimatePresence mode="wait">
@@ -100,7 +100,7 @@ export const Contact = () => {
                 transition={{ delay: 0.3 }}
                 className="text-center mb-10"
               >
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
                   Thank You!
                 </h2>
                 <p className="text-lg md:text-xl text-slate-300 max-w-md mx-auto leading-relaxed">
@@ -168,7 +168,7 @@ export const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-none"
+            className="lg:col-span-7 glass-panel p-6 md:p-12 rounded-[2.5rem] shadow-none w-full"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
               <GradientText
@@ -218,7 +218,7 @@ export const Contact = () => {
                     <select
                       value={countryCode}
                       onChange={(e) => setCountryCode(e.target.value)}
-                      className="bg-slate-900 border border-white/10 rounded-xl px-3 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white appearance-none cursor-pointer min-w-[100px]"
+                      className="bg-slate-900 border border-white/10 rounded-xl px-2 md:px-3 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white appearance-none cursor-pointer min-w-[90px] text-sm md:text-base"
                     >
                       <option value="+977">🇳🇵 +977</option>
                       <option value="+91">🇮🇳 +91</option>
@@ -381,7 +381,7 @@ const InfoCard = ({
     initial={{ opacity: 0, x: 20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
-    className="bg-slate-900/50 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex items-start gap-6 shadow-none hover:shadow-md transition-all group"
+    className="bg-slate-900/50 backdrop-blur-md border border-white/5 p-5 md:p-6 rounded-2xl flex items-start gap-4 md:gap-6 shadow-none hover:shadow-md transition-all group overflow-hidden w-full"
   >
     <div
       className={`w-14 h-14 rounded-2xl ${iconColor} flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
@@ -396,7 +396,7 @@ const InfoCard = ({
         {lines.map((line: string, i: number) => (
           <p
             key={i}
-            className={`text-slate-400 text-sm md:text-base leading-tight ${line.includes("@") ? "text-blue-400 font-medium" : ""}`}
+            className={`text-slate-400 text-sm md:text-base leading-tight break-words ${line.includes("@") || line.includes("+") ? "text-blue-400 font-medium break-all" : ""}`}
           >
             {line}
           </p>

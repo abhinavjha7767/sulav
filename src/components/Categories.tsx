@@ -76,7 +76,7 @@ const categories = [
 
 export const Categories = () => {
   return (
-    <section id="categories" className="py-24 bg-transparent backdrop-blur-[1px] transition-colors duration-300">
+    <section id="categories" className="py-24 bg-black backdrop-blur-[1px] transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2

@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-const CustomCursor = dynamic(
-  () => import("@/src/components/CustomCursor"),
+const TargetCursor = dynamic(
+  () => import("@/src/components/TargetCursor"),
   { ssr: false }
 );
 
@@ -44,7 +44,12 @@ export function ClientEffects() {
           autoRampDuration={0.6}
         />
       </div>
-      <CustomCursor />
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor
+        parallaxOn
+        hoverDuration={0.2}
+      />
       <ScrollToTop />
       <WhatsAppButton />
     </>

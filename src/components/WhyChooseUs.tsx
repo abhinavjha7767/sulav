@@ -30,7 +30,7 @@ const reasons = [
 
 export const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-black/20 transition-colors duration-300">
+    <section className="py-24 bg-black transition-colors duration-300">
       <div className="w-full mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">

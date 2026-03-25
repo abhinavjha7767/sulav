@@ -67,7 +67,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative bg-transparent backdrop-blur-[2px] transition-colors duration-300"
+      className="py-24 relative bg-slate-950 backdrop-blur-[2px] transition-colors duration-300"
     >
       <div className="w-full mx-auto px-6">
         <AnimatePresence mode="wait">
@@ -185,7 +185,14 @@ export const Contact = () => {
                   <label className="text-sm font-bold text-slate-300">
                     Full Name <span className="text-red-500">*</span>
                   </label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors text-white"
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-300">

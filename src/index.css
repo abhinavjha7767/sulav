@@ -72,18 +72,23 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-industrial-primary dark:text-white uppercase tracking-tight;
   }
+  
+  /* Global Cursor Suppression for TargetCursor */
+  html, body, a, button, input, select, textarea, [role="button"], .cursor-target {
+    cursor: none !important;
+  }
+  
   * {
     @apply border-border outline-ring/50;
   }
 }
 
 .glass-panel {
-  @apply bg-white/70 dark:bg-white/5 backdrop-blur-[20px] dark:backdrop-blur-[40px] border-none shadow-none;
-  box-shadow: 0 4px 60px -12px rgba(0, 30, 64, 0.05);
+  @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-none;
 }
 
 .titan-card {
-  @apply bg-industrial-surface-high dark:bg-white/5 p-6 border-none text-industrial-primary dark:text-white;
+  @apply bg-slate-900/80 p-6 border border-white/10 text-white;
   border-radius: 0px;
 }
 

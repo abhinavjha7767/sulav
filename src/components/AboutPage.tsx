@@ -87,7 +87,7 @@ export const AboutPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-slate-400 max-w-lg leading-relaxed font-light"
+              className="text-xl md:text-2xl text-slate-400 max-w-lg leading-relaxed font-light"
             >
               Sulav Mechatronics is a global leader in precision engineering, 
               delivering state-of-the-art industrial solutions for the next generation.
@@ -226,7 +226,7 @@ export const AboutPage = () => {
                     </GradientText>
                   </h2>
                 </div>
-                <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center">
+                <p className="text-xl text-slate-200 leading-relaxed text-center">
                   To provide cutting-edge industrial machinery and mechatronic
                   solutions that empower businesses to achieve operational
                   excellence and drive innovation in their respective
@@ -249,7 +249,7 @@ export const AboutPage = () => {
                     </GradientText>
                   </h2>
                 </div>
-                <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center">
+                <p className="text-xl text-slate-200 leading-relaxed text-center">
                   To be Nepal's leading provider of industrial machinery and
                   automation solutions, recognized for our commitment to
                   quality, innovation, and customer satisfaction.
@@ -527,10 +527,10 @@ const ValueCard = ({ icon: Icon, title, desc, color }: any) => {
       >
         <Icon className="w-7 h-7 text-white" />
       </div>
-      <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-4">
+      <h3 className="text-xl font-display font-bold text-white mb-4">
         {title}
       </h3>
-      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+      <p className="text-sm text-slate-200 leading-relaxed">
         {desc}
       </p>
     </motion.div>
@@ -560,10 +560,10 @@ const TimelineItem = ({ icon: Icon, title, desc, align }: any) => (
     </div>
 
     <div className="glass-panel p-8 rounded-2xl border border-white/10 shadow-xl">
-      <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">
+      <h3 className="text-xl font-display font-bold text-white mb-2">
         {title}
       </h3>
-      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+      <p className="text-sm text-slate-200 leading-relaxed">
         {desc}
       </p>
     </div>
@@ -578,10 +578,10 @@ const CertCard = ({ title, desc, icon: Icon = Award }: any) => (
     <div className="w-12 h-12 rounded-2xl bg-blue-600/10 flex items-center justify-center mx-auto mb-6 text-blue-600 dark:text-blue-500">
       <Icon className="w-6 h-6" />
     </div>
-    <h3 className="text-lg font-display font-bold text-blue-900 dark:text-white mb-3">
+    <h3 className="text-xl font-display font-bold text-white mb-3">
       {title}
     </h3>
-    <p className="text-xs text-slate-500 dark:text-slate-400 leading-loose">
+    <p className="text-sm text-slate-200 leading-loose">
       {desc}
     </p>
   </motion.div>
@@ -595,10 +595,10 @@ const TeamDept = ({ icon: Icon, title, desc }: any) => (
     <div className="w-16 h-16 rounded-3xl bg-blue-600/10 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
       <Icon className="w-7 h-7" />
     </div>
-    <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-4">
+    <h3 className="text-2xl font-display font-bold text-white mb-4">
       {title}
     </h3>
-    <p className="text-sm text-slate-500 dark:text-slate-400 leading-normal">
+    <p className="text-base text-slate-200 leading-normal">
       {desc}
     </p>
   </motion.div>

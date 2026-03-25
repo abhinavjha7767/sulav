@@ -17,12 +17,6 @@
       "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
     ]
   },
-  "components\\ClientEffects.tsx -> @/src/components/CustomCursor": {
-    "id": "components\\ClientEffects.tsx -> @/src/components/CustomCursor",
-    "files": [
-      "static/chunks/_app-pages-browser_src_components_CustomCursor_tsx.js"
-    ]
-  },
   "components\\ClientEffects.tsx -> @/src/components/LiquidEther": {
     "id": "components\\ClientEffects.tsx -> @/src/components/LiquidEther",
     "files": [
@@ -33,6 +27,12 @@
     "id": "components\\ClientEffects.tsx -> @/src/components/ScrollToTop",
     "files": [
       "static/chunks/_app-pages-browser_src_components_ScrollToTop_tsx.js"
+    ]
+  },
+  "components\\ClientEffects.tsx -> @/src/components/TargetCursor": {
+    "id": "components\\ClientEffects.tsx -> @/src/components/TargetCursor",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_TargetCursor_tsx.js"
     ]
   },
   "components\\ClientEffects.tsx -> @/src/components/WhatsAppButton": {

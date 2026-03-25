@@ -8,7 +8,6 @@ export default function ProductsRoute() {
     <main className="min-h-screen">
       <Navbar />
       <ProductPage />
-      <Products />
       <Footer />
     </main>
   );

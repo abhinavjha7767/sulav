@@ -9,7 +9,7 @@ import GradientText from "./TextGradient";
 
 export const About = () => {
   return (
-    <section id="about" className="py-16 md:py-24 relative overflow-hidden bg-transparent backdrop-blur-[1px] transition-colors duration-300">
+    <section id="about" className="py-16 md:py-24 relative overflow-hidden bg-black backdrop-blur-[1px] transition-colors duration-300">
       <div className="w-full mx-auto px-6 max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}

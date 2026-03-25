@@ -56,16 +56,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li>Tilottama-9, Rupandehi, Nepal</li>
-              <li>
-                <a
-                  href="https://www.sulavmachinery.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  www.sulavmachinery.com
-                </a>
-              </li>
+              
             </ul>
           </div>
 
